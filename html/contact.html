@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Technology Crimes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="js/jquery.mobile.structure-1.4.5.min.css" /> 
+  <link rel="stylesheet" href="css/theme/jquery.mobile.flatui.css" />
+  <link rel="stylesheet" href="css/theme/jquery.mobile.icons.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script> 
+  <script src="js/jquery.mobile-1.4.5.min.js"></script> 
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/purl.js"></script>
+  <script src="js/custom.js"></script>
+  <link rel="stylesheet" href="css/custom.css"/> <!-- my custom css -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+<div data-role="page" id="contact">
+  <div data-role="header" data-position="fixed" id="header" role="banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown"></div>
+  <!-- /header -->
+
+
+  <div data-role="content">
+    <h2>Contact Us</h2>
+
+
+    <div id="map" style="height:250px;"></div>
+    
+    <div>
+    <form id="contactForm" method="POST">
+      <div class="ui-field-contain">
+        <label for="txtName">Name</label>
+        <input type="text" name="txtName" id="txtName" placeholder="Your name.." value="">
+      </div>
+      <div class="ui-field-contain">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" placeholder="Your email..">
+      </div>
+      <div class="ui-field-contain">
+        <label for="message">Message:</label>
+        <textarea cols="40" rows="8" name="message" id="message" data-mini="true"></textarea>
+      </div>
+      <div class="ui-field-contain">
+          <div class="g-recaptcha" id="reCaptcha" data-sitekey="6LfHuSQTAAAAADBAPPyEii0byklh9Nf5nwDD92gX"></div>
+      </div>
+      <div class="ui-grid-a">
+        <div class="ui-block-a"><input type="reset" value="Reset" data-theme="c"></div>
+        <div class="ui-block-b"><input type="submit" value="Submit" data-theme="b"></div>
+      </div>
+      
+    </form>
+
+    </div>
+
+  </div>
+  <!-- /content -->
+
+  <div data-role="footer" data-position="fixed" id="footer"></div>
+
+
+
+</div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJ6vSmgyurZhrJLaUcAYJkEP40B2N1slA&callback=initMap"   async defer></script>
+<script>
+      var map;
+      function initMap() {
+        var myLocate = {lat: 52.407181, lng: -1.503617};
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: myLocate,
+          zoom: 15
+        });
+
+        marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: myLocate
+        });
+        marker.addListener('click', toggleBounce);
+      }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
+</script>
+  <!-- /page Contact -->
+
+</body>
+</html>

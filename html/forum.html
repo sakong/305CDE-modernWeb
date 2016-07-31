@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Technology Crimes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="js/jquery.mobile.structure-1.4.5.min.css" /> 
+  <link rel="stylesheet" href="css/theme/jquery.mobile.flatui.css" />
+  <link rel="stylesheet" href="css/theme/jquery.mobile.icons.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script> 
+  <script src="js/jquery.mobile-1.4.5.min.js"></script> 
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/purl.js"></script>
+  <script src="js/custom.js"></script>
+  <link rel="stylesheet" href="css/custom.css"/> <!-- my custom css -->
+</head>
+
+<body>
+
+<div data-role="page" id="forum">
+  <div data-role="header" data-position="fixed" id="header" role="banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown"></div>
+  <!-- /header -->
+
+
+  <div data-role="content">
+    <h2>Discuss Forum</h2>
+
+    <form>
+        <input id="filterTable-input" data-type="search">
+    </form>
+    <a href="#addtopic" class="ui-btn ui-btn-a ui-icon-plus ui-btn-icon-left ui-btn-inline ui-shadow ui-corner-all" data-ajax="false">Add Topic</a>
+    <table data-role="table" id="table-forum" data-mode="columntoggle" data-filter="true" data-input="#filterTable-input" class="ui-responsive table-stroke">
+      <thead>
+      <tr>
+        <th data-priority="3">Category</th>
+        <th>Topic Title</th>
+        <th data-priority="1">Date</th>
+        <th data-priority="2">Posted By</th>
+      </tr>
+      </thead>
+
+      <tbody id="forumBody"></tbody>
+    </table>
+
+    <form id="addtopic" method="POST">
+    <input type="hidden" name="uid" value=""/>
+      <div data-role="fieldcontain">
+        <h3>Add New Topic</h3>
+          <div class="ui-field-contain">
+            <label for="Username">Username:</label>
+            <input style="color:#000;" type="text" name="username" id="Username" value="" placeholder="Username" disabled="disabled">
+          </div>
+
+          <div class="ui-field-contain">
+            <label for="category" class="select">Category:</label>
+            <select name="category" id="category" data-inline="true" data-theme="c">
+                <option value="Questions">Questions</option>
+                <option value="Opinions">Opinions</option>
+            </select>
+          </div>
+          <div class="ui-field-contain">
+            <label for="title">Topic Title:</label>
+            <input type="text" name="title" id="title" value="" placeholder="Title" maxlength="200">
+          </div>
+          <div class="ui-field-contain">
+            <label for="content">Content:</label>
+            <textarea cols="40" rows="8" name="content" id="content"></textarea>
+          </div>
+          <input type="submit" value="Submit" data-theme="b" style="ui-btn ui-shadow ui-corner-all">
+      </div>
+    </form>
+
+  </div>
+  <!-- /content -->
+
+  <div data-role="footer" data-position="fixed" id="footer"></div>
+
+
+
+</div>
+  <!-- /page Homepage -->
+
+</body>
+</html>

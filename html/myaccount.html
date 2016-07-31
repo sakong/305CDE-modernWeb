@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Technology Crimes</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="js/jquery.mobile.structure-1.4.5.min.css" /> 
+  <link rel="stylesheet" href="css/theme/jquery.mobile.flatui.css" />
+  <link rel="stylesheet" href="css/theme/jquery.mobile.icons.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script> 
+  <script src="js/jquery.mobile-1.4.5.min.js"></script> 
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/purl.js"></script>
+  <script src="js/custom.js"></script>
+  <link rel="stylesheet" href="css/custom.css"/> <!-- my custom css -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+
+<div data-role="page" id="myaccount">
+  <div data-theme="b" data-role="header" data-position="fixed" id="header" role="banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown"></div>
+  <!-- /header -->
+
+  <div data-role="content">
+    <h1></h1>
+    <form id="changePwdForm" method="post">
+    <input type="hidden" name="uid" value=""/>
+        <div style="padding:10px 20px;">
+            <h3>Change password</h3>
+            <label for="oldpassword" class="ui-hidden-accessible">Old Password:</label>
+            <input type="password" name="oldpassword" id="oldpassword" value="" placeholder="Old Password" data-theme="a">
+
+            <label for="password" class="ui-hidden-accessible">new Password:</label>
+            <input type="password" name="password" id="password" value="" placeholder="New Password" data-theme="a">
+
+            <label for="password2" class="ui-hidden-accessible">Confirm New Password:</label>
+            <input type="password" name="password2" id="password2" value="" placeholder="Verify your new password" data-theme="a">
+
+            <button data-role="submit" type="submit" id="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Submit</button>
+        </div>
+    </form>
+
+    <div style="border-top: 1px solid #ccc;margin:20px 0; padding: 20px;">
+      <h3>My favourite list</h3>
+
+      <div id="favList">
+        <i>You haven't added any articles yet!</i>
+      </div>
+
+    </div>
+    
+    <div style="border-top: 1px solid #ccc;margin:20px 0; padding: 20px 0;"><button id="logoutbtn" class="ui-btn-d ui-mini ui-btn"  data-role="button" data-mini="true">Logout my account</button></div>
+     
+  </div>
+  <!-- /content -->
+
+  <div data-theme="b" data-role="footer" data-position="fixed" id="footer"></div>
+
+
+
+</div>
+  <!-- /page My account -->
+
+</body>
+</html>

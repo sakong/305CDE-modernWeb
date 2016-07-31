@@ -1,0 +1,8 @@
+/* Register */
+
+.error{
+	color: red;
+}
+label.error{
+	font-size: 80%;
+}
